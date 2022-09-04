@@ -1,7 +1,9 @@
 package com.bilgeadam.hibernateexample.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,9 +11,11 @@ import javax.persistence.Table;
 @Table(name = "tbluser")
 public class User {
 	@Id
-	@GeneratedValue(generator = "sq_tblmusteri_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+	@Column(unique = true, nullable = false)
 	private String username;
+	@Column(length = 32)
 	private String password;
 	private String gender;
 
@@ -28,6 +32,10 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.gender = gender;
+	}
+
+	public User() {
+		super();
 	}
 
 	public long getId() {

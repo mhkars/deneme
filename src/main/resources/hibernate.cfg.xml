@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE hibernate-configuration PUBLIC  
-        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
-        "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">  
-        
-<hibernate configuration>  
+<!-- <!DOCTYPE hibernate-configuration PUBLIC   -->
+<!--         "-//Hibernate/Hibernate Configuration DTD 5.3//EN"   -->
+<!--         "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">   -->
+ <!DOCTYPE hibernate-configuration PUBLIC    
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"    
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>  
     <session-factory>  
     
     <!-- hibernate config -->
@@ -18,7 +20,7 @@
        
 		<property name="connection.autocommit">false</property>
 		<property name="hbm2ddl.auto">update</property> 
-<!-- 		<property name="hbm2ddl.auto">create</property>  -->
+
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
        
     </session-factory>  
